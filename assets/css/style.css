@@ -53,7 +53,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .h3 { font: 500 clamp(1.35rem, 2.2vw, 1.7rem)/1.2 var(--display); margin-bottom: .5em; }
 :lang(zh) .display, :lang(zh) .page-title, :lang(zh) .h2, :lang(zh) .h3 { font-weight: 600; letter-spacing: .01em; line-height: 1.22; }
 .label { display: inline-flex; align-items: center; gap: 10px; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--copper); margin-bottom: 18px; }
-.label::before { content: ""; width: 22px; height: 2px; background: currentColor; }
 :lang(zh) .label { letter-spacing: .1em; }
 .lead { font-size: clamp(1.1rem, 1.6vw, 1.28rem); line-height: 1.6; color: var(--text); max-width: 38em; }
 .muted { color: var(--muted); }
@@ -157,23 +156,21 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ---------------------------------------------------------------- hero */
 .hero { padding: clamp(48px, 7vw, 96px) 0 clamp(64px, 8vw, 112px); position: relative; }
-.hero::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(to bottom, transparent 0 39px, rgb(20 32 41 / .05) 39px 40px); mask-image: linear-gradient(to bottom, #000 0%, transparent 85%); -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%); pointer-events: none; }
 .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4.4fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
 .hero .lead { margin: 28px 0 32px; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* the ledger card */
 .ledger { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 26px 26px 22px; box-shadow: 0 30px 60px -30px rgb(20 32 41 / .28), 0 2px 0 rgb(20 32 41 / .04); position: relative; }
-.ledger::before { content: ""; position: absolute; left: 22px; top: 0; bottom: 0; width: 1px; background: rgb(169 74 34 / .3); }
-.ledger-h { display: flex; justify-content: space-between; align-items: baseline; padding-left: 14px; font-weight: 600; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.ledger-h { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .ledger-est { font: italic 500 1rem var(--display); letter-spacing: 0; text-transform: none; color: var(--copper); }
 .ledger-rows { margin: 0; }
-.ledger-rows > div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0 11px 14px; border-bottom: 1px solid var(--line); }
+.ledger-rows > div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
 .ledger-rows dt { color: var(--muted); font-size: .95rem; }
 .ledger-rows dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
 .ledger-next dd { display: flex; flex-direction: column; align-items: flex-end; }
 .ledger-next small { font-weight: 500; color: var(--copper); font-size: .82rem; }
-.ledger-total { padding: 18px 0 4px 14px; }
+.ledger-total { padding: 18px 0 4px; }
 .ledger-total p:first-child { display: flex; align-items: baseline; gap: 12px; margin: 0; }
 .ledger-num { font: 400 4.2rem/1 var(--display); color: var(--ink); font-variant-numeric: tabular-nums; padding-bottom: 6px; border-bottom: 4px double var(--ink); }
 .ledger-total span:not(.ledger-num) { color: var(--muted); }
@@ -313,7 +310,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ---------------------------------------------------------------- about */
 .portrait { margin: 0; aspect-ratio: 4 / 5; border-radius: 10px; background: linear-gradient(160deg, var(--ink-2), var(--ink)); color: var(--on-ink); display: flex; flex-direction: column; justify-content: space-between; padding: 28px; position: relative; overflow: hidden; }
-.portrait::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(to bottom, transparent 0 31px, rgb(255 255 255 / .06) 31px 32px); }
 .portrait-mono { font: italic 400 clamp(6rem, 14vw, 10rem)/1 var(--display); color: var(--copper-2); position: relative; z-index: 1; }
 .portrait figcaption { position: relative; z-index: 1; font: 500 1.4rem/1.3 var(--display); }
 .portrait small { font: 600 .74rem var(--sans); letter-spacing: .14em; color: var(--on-ink-2); }
