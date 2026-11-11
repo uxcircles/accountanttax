@@ -1,0 +1,146 @@
+"""Page content in both languages, side by side: L(english, 繁體中文)."""
+from layout import L
+
+# id, title, summary, what's included
+SERVICES = [
+    ("bookkeeping", L("Bookkeeping &amp; management accounts", "記帳及管理帳目"),
+     L("Clean books every month, and figures you can actually run the business on.",
+       "每月整理帳目，提供可用於經營決策的財務數字。"),
+     [L("Bookkeeping, set up in cloud software or kept from your records", "記帳：使用雲端軟件或按閣下單據整理"),
+      L("Monthly or quarterly management accounts", "每月或每季管理帳目"),
+      L("Budgets, cash-flow forecasts and business plans", "預算、現金流預測及業務計劃")]),
+    ("accounts", L("Annual accounts", "年度帳目"),
+     L("Year-end accounts for sole traders, partnerships and limited companies.",
+       "為個體經營、合夥生意及有限公司編製年度帳目。"),
+     [L("Sole trader and partnership accounts", "個體經營及合夥生意帳目"),
+      L("Limited company accounts, signed and filed with Companies House", "有限公司帳目，簽署後遞交 Companies House"),
+      L("Capital allowances on equipment, vans and property fit-outs", "設備、貨車及物業裝修的資本免稅額")]),
+    ("tax", L("Self Assessment &amp; Corporation Tax", "個人報稅及公司稅"),
+     L("Returns filed on time, with every allowance and relief you’re entitled to.",
+       "準時遞交報稅表，並確保用盡所有可享的免稅額及寬免。"),
+     [L("Self Assessment for the self-employed, landlords and company directors", "自僱人士、業主及公司董事的個人報稅"),
+      L("Corporation Tax returns (CT600) and tax planning", "公司稅申報表（CT600）及稅務規劃"),
+      L("Rental income, property investment and capital gains", "租金收入、物業投資及資本增值稅")]),
+    ("mtd", L("Making Tax Digital for Income Tax", "所得稅數碼報稅（MTD）"),
+     L("Quarterly updates are now compulsory for many sole traders and landlords. We’ll get you set up.",
+       "許多自僱人士及業主現須按季度數碼申報，我們協助閣下順利過渡。"),
+     [L("Check whether, and when, you need to join", "評估閣下是否及何時須參加"),
+      L("Choose and set up MTD-compatible software", "挑選及設定 MTD 兼容軟件"),
+      L("Quarterly updates and the final year-end return", "季度申報及年終最終申報")]),
+    ("vat", L("VAT &amp; HMRC enquiries", "增值稅及稅務調查"),
+     L("VAT registration and returns, and a calm, experienced hand if HMRC opens an enquiry.",
+       "處理增值稅登記及申報；如遇 HMRC 調查，由經驗豐富的會計師冷靜應對。"),
+     [L("VAT registration, schemes and Making Tax Digital returns", "增值稅登記、計劃選擇及數碼申報"),
+      L("Construction Industry Scheme (CIS) returns and refunds", "建築業計劃（CIS）申報及退稅"),
+      L("Representation in HMRC enquiries and investigations", "代表客戶處理 HMRC 查詢及調查")]),
+    ("payroll", L("Payroll (PAYE)", "薪俸（PAYE）"),
+     L("Payslips, RTI submissions and pension duties, done for you.",
+       "代為處理糧單、實時資料申報（RTI）及僱員退休金責任。"),
+     [L("Weekly or monthly payroll and Full Payment Submissions", "每週或每月糧單及 FPS 申報"),
+      L("Workplace pension auto-enrolment", "職場退休金自動登記"),
+      L("P60s, P11Ds and year-end returns", "P60、P11D 及年終申報")]),
+    ("company", L("Company formation &amp; secretarial", "成立公司及公司秘書"),
+     L("Starting a company, and keeping it in good standing with Companies House.",
+       "協助成立有限公司，並確保公司在 Companies House 的紀錄合規。"),
+     [L("Sole trader or limited company: which suits you", "個體經營或有限公司：哪個較適合閣下"),
+      L("Company formation and HMRC registrations", "註冊成立公司及向 HMRC 登記"),
+      L("Confirmation statements, director changes and identity verification", "確認聲明書、董事變更及身份核實")]),
+]
+
+# Who we help (home page)
+CLIENTS = [
+    (L("Property investors &amp; landlords", "物業投資者及業主"),
+     L("Rental accounts, capital allowances, capital gains and the new MTD rules for landlords.",
+       "租金帳目、資本免稅額、資本增值稅及業主的 MTD 新規。")),
+    (L("Builders &amp; trades", "建築及裝修行業"),
+     L("CIS deductions and refunds, van and tool allowances, and limited company work.",
+       "CIS 扣稅及退稅、貨車及工具免稅額，以及有限公司事務。")),
+    (L("Small businesses &amp; sole traders", "小型企業及自僱人士"),
+     L("Shops, restaurants, takeaways and online sellers, from start-up onwards.",
+       "零售店、餐廳、外賣店及網店，由創業開始全程支援。")),
+    (L("Chinese-speaking clients", "華語客戶"),
+     L("Advice in Cantonese or Putonghua, with letters from HMRC explained in Chinese.",
+       "可用廣東話或普通話溝通，並以中文解釋 HMRC 來信。")),
+]
+
+WHY = [
+    (L("You deal with William", "由 William 親自跟進"),
+     L("No account managers or junior staff. The qualified accountant you meet is the one who does your work.",
+       "沒有客戶經理或初級職員轉手，與閣下會面的專業會計師就是負責處理閣下帳目的人。")),
+    (L("Qualified in two jurisdictions", "兩地專業資格"),
+     L("A member of the AIA in the UK and the HKICPA in Hong Kong, practising under an AIA practising certificate.",
+       "英國國際會計師公會（AIA）及香港會計師公會（HKICPA）會員，持 AIA 執業證書執業。")),
+    (L("Over 36 years’ experience", "逾 36 年經驗"),
+     L("Including years inside a large PLC and the property investment and construction industry.",
+       "曾任職大型上市公司，並在物業投資及建築業累積多年經驗。")),
+    (L("Fees that make sense", "收費合理"),
+     L("A cost-effective service with a fixed quote agreed before work starts.",
+       "服務具成本效益，開始工作前先確定固定報價。")),
+]
+
+# Tax rates 2026/27 vs 2025/26 (England, Wales and Northern Ireland)
+RATES = [
+    (L("Income tax", "入息稅"), [
+        (L("Personal Allowance", "個人免稅額"), "£12,570", "£12,570"),
+        (L("Basic rate 20%: taxable income", "基本稅率 20%：應課稅入息"), "£0 – £37,700", "£0 – £37,700"),
+        (L("Higher rate 40%: taxable income", "較高稅率 40%：應課稅入息"), "£37,701 – £125,140", "£37,701 – £125,140"),
+        (L("Additional rate 45%: taxable income over", "附加稅率 45%：應課稅入息超過"), "£125,140", "£125,140"),
+        (L("Personal Allowance reduced £1 for every £2 of income over", "收入超過以下金額，每 £2 減少 £1 個人免稅額"), "£100,000", "£100,000"),
+        (L("Marriage Allowance (transferable)", "婚姻免稅額（可轉讓）"), "£1,260", "£1,260"),
+    ]),
+    (L("Dividends", "股息"), [
+        (L("Dividend Allowance", "股息免稅額"), "£500", "£500"),
+        (L("Ordinary rate (basic-rate taxpayers)", "普通稅率（基本稅率納稅人）"), "<b>10.75%</b>", "8.75%"),
+        (L("Upper rate (higher-rate taxpayers)", "較高稅率（較高稅率納稅人）"), "<b>35.75%</b>", "33.75%"),
+        (L("Additional rate", "附加稅率"), "39.35%", "39.35%"),
+    ]),
+    (L("Savings", "儲蓄利息"), [
+        (L("Personal Savings Allowance: basic / higher rate", "個人儲蓄免稅額：基本／較高稅率"), "£1,000 / £500", "£1,000 / £500"),
+        (L("Starting rate for savings (0%)", "儲蓄起徵稅率（0%）"), "£5,000", "£5,000"),
+        (L("ISA allowance", "ISA 年度限額"), "£20,000", "£20,000"),
+    ]),
+    (L("National Insurance", "國民保險供款"), [
+        (L("Class 1 employee: £12,570 – £50,270 / above", "第一類僱員：£12,570 – £50,270／以上"), "8% / 2%", "8% / 2%"),
+        (L("Class 1 employer: above £5,000", "第一類僱主：超過 £5,000"), "15%", "15%"),
+        (L("Employment Allowance", "僱主就業津貼"), "£10,500", "£10,500"),
+        (L("Class 4 self-employed: £12,570 – £50,270 / above", "第四類自僱：£12,570 – £50,270／以上"), "6% / 2%", "6% / 2%"),
+    ]),
+    (L("Business &amp; capital gains", "營商及資本增值"), [
+        (L("Corporation Tax: profits up to £50,000", "公司稅：利潤 £50,000 或以下"), "19%", "19%"),
+        (L("Corporation Tax: profits over £250,000 (marginal relief between)", "公司稅：利潤超過 £250,000（其間設邊際寬免）"), "25%", "25%"),
+        (L("VAT registration / deregistration threshold", "增值稅登記／撤銷登記門檻"), "£90,000 / £88,000", "£90,000 / £88,000"),
+        (L("Capital Gains Tax: basic / higher rate", "資本增值稅：基本／較高稅率"), "18% / 24%", "18% / 24%"),
+        (L("Capital Gains Tax annual exempt amount", "資本增值稅年度豁免額"), "£3,000", "£3,000"),
+        (L("Business Asset Disposal Relief", "營業資產出售寬免稅率"), "<b>18%</b>", "14%"),
+    ]),
+]
+
+COMING = [
+    L("<strong>April 2027:</strong> tax on savings income rises by 2 points, to 22%, 42% and 47%, and property income gets its own rates at the same levels (announced in the Autumn Budget 2025).",
+      "<strong>2027 年 4 月：</strong>儲蓄利息稅率上調 2 個百分點至 22%、42% 及 47%，物業收入亦設獨立稅率，水平相同（2025 年秋季預算案公佈）。"),
+    L("<strong>Frozen to 2031:</strong> the Personal Allowance and income tax thresholds stay where they are until April 2031, so more of any pay rise is taxed.",
+      "<strong>凍結至 2031 年：</strong>個人免稅額及入息稅門檻維持不變直至 2031 年 4 月，加薪部分將有更多被徵稅。"),
+    L("<strong>Making Tax Digital:</strong> the income threshold falls to £30,000 in April 2027 and £20,000 in April 2028.",
+      "<strong>數碼報稅：</strong>收入門檻於 2027 年 4 月降至 £30,000，2028 年 4 月再降至 £20,000。"),
+]
+
+STARTUP = [
+    (L("Choose a structure", "選擇經營架構"),
+     L("Sole trader, partnership or limited company. A company can save tax once profits grow, but brings more paperwork and Companies House filings.",
+       "個體經營、合夥或有限公司。利潤增加後，有限公司或可節省稅款，但文書及 Companies House 申報亦較多。")),
+    (L("Plan your capital", "籌備資金"),
+     L("Work out start-up costs and how you’ll fund them: savings, a loan or investors. A simple cash-flow forecast helps when you talk to the bank.",
+       "估算開業成本及資金來源：個人積蓄、貸款或投資者。一份簡單的現金流預測有助與銀行洽談。")),
+    (L("Check licences and permits", "申請牌照及許可"),
+     L("Food businesses must register with the council at least 28 days before opening. Alcohol, taxis and some trades need a licence.",
+       "食品生意須於開業前最少 28 天向地方議會登記；售酒、的士及部分行業亦須申領牌照。")),
+    (L("Register with HMRC", "向 HMRC 登記"),
+     L("Register for Self Assessment by 5 October after the end of the tax year you started trading, or you may be fined. A new company must tell HMRC within 3 months of starting to trade.",
+       "須於開始營業的稅務年度結束後的 10 月 5 日前登記個人報稅，否則或會被罰款；新公司須於開始營業後 3 個月內通知 HMRC。")),
+    (L("VAT and payroll", "增值稅及薪俸"),
+     L("Register for VAT if your turnover goes over £90,000 in any rolling 12 months, and set up PAYE before you pay your first employee.",
+       "任何連續 12 個月營業額超過 £90,000 須登記增值稅；首次支薪予僱員前須設立 PAYE。")),
+    (L("Keep digital records from day one", "第一天起數碼記帳"),
+     L("With Making Tax Digital, sole traders and landlords will need software records anyway. Starting that way saves a painful switch later.",
+       "隨著數碼報稅推行，自僱人士及業主遲早須以軟件記帳，一開始就使用可省卻日後轉換的麻煩。")),
+]
