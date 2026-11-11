@@ -52,8 +52,8 @@ def deadlines_section(lang):
 def home(lang):
     t = {
         "eyebrow": L("Qualified accountant in Sheffield · since 2007", "錫菲專業會計師 · 始於 2007"),
-        "title": L("Accounts and tax,|handled by someone|<em>who speaks your language.</em>",
-                   "會計及稅務|由懂你語言的|<em>專業會計師處理。</em>"),
+        "title": L("Accounts and tax,|handled by someone|<em>who speaks your language</em>",
+                   "會計及稅務|由懂你語言的|<em>專業會計師處理</em>"),
         "lead": L("William Lai &amp; Co looks after sole traders, companies, landlords and builders across Sheffield and South Yorkshire — in English, Cantonese or Putonghua.",
                   "William Lai &amp; Co 為錫菲及南約克郡的自僱人士、有限公司、業主及建築商提供會計及稅務服務，可用英語、廣東話或普通話溝通。"),
         "cta": L("Arrange a free first chat", "預約免費初步諮詢"),
