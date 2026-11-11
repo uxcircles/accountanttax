@@ -259,6 +259,7 @@ def page(lang, name, title, description, body, body_class=""):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{SITE}{meta['dir']}{path}">
