@@ -173,7 +173,7 @@ def header(lang, page):
 <div class="concept-bar" role="note">
   <div class="wrap concept-inner">
     <p><span class="concept-tag">{r(UI['concept'], lang)}</span><span class="concept-long">{r(UI['concept_long'], lang)}</span></p>
-    <a href="https://ux-circles.com/web" target="_blank" rel="noopener"><span class="concept-by">{r(UI['concept_by'], lang)}</span><strong>UX CIRCLES</strong> {ICON['arrow-ne']}</a>
+    <a href="https://ux-circles.com/professionals" target="_blank" rel="noopener"><span class="concept-by">{r(UI['concept_by'], lang)}</span><strong>UX CIRCLES</strong> {ICON['arrow-ne']}</a>
   </div>
 </div>
 <header class="site-header" data-header>
@@ -221,7 +221,7 @@ def footer(lang, page):
     </div>
   </div>
   <div class="wrap footer-base">
-    <span>© <span data-year>2026</span> {r(UI['reg'], lang)}<br>{r(UI['body'], lang)}<br><span class="concept-note">{r(UI['concept_note'], lang)} <a class="u" href="https://ux-circles.com/web" target="_blank" rel="noopener">UX CIRCLES</a></span></span>
+    <span>© <span data-year>2026</span> {r(UI['reg'], lang)}<br>{r(UI['body'], lang)}<br><span class="concept-note">{r(UI['concept_note'], lang)} <a class="u" href="https://ux-circles.com/professionals" target="_blank" rel="noopener">UX CIRCLES</a></span></span>
     <a href="#main" class="u">{r(UI['top'], lang)} ↑</a>
   </div>
 </footer>
